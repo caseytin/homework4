@@ -150,29 +150,26 @@ header p {
 /* desktop view */
 @media all and (min-width: 800px) {
 
-.container {
-/*Your code here */
-/* See documentation for desktop view */ 
-}
-
-nav {
-  background-color: #ddd;
-  text-align: right;
-  padding: 35px 0px;
-  align-self: center;
-}
-
-.about, .clients, .method-image, .contact-image {
-/*Your code here */
-/* See documentation for desktop view */ 
-}
-
-.about-image, .clients-image, .method, .contact {
-  /*Your code here */
-  /* See documentation for desktop view */ 
+  .container {
+    display: grid; /* container class uses grid */
+    grid-template-columns: 50px auto 500px auto 50px; /* five columns from spec */
+    grid-template-rows: 70px 400px 400px 400px 400px 400px 100px; /* seven rows from spec */
   }
 
+  nav {
+    background-color: #ddd;
+    text-align: right;
+    padding: 35px 0px;
+    align-self: center;
+  }
 
+  .about, .clients, .method-image, .contact-image {
+    grid-column: 3 / span 2; /* begins in 3rd column spans 2 columns */
+  }
+
+  .about-image, .clients-image, .method, .contact {
+    grid-column: 2 / span 2; /* begins in 2nd column spans 2 columns */
+  }
 }  /*End the media query*/
 
 @media screen and (prefers-reduced-motion: reduce) {
